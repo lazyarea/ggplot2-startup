@@ -32,8 +32,10 @@ $ R
 > library(maptools)
 
 #---------------------------------------------
-# Drow Map
+# Drow Map(JPN)
 #---------------------------------------------
+
+> library(raster)
 
 > library(maptools)
 
@@ -44,6 +46,22 @@ $ R
 > ja_map <- fortify(ja_shp)
 
 > ggplot(ja_map, aes(x=long, y=lat, group=group)) + geom_path(lwd=0.5)
+
+#---------------------------------------------
+# Drow Map(United Kingdom)
+#---------------------------------------------
+
+> library(raster)
+
+> library(maptools)
+
+> library(ggplot2)
+
+> uk_shp <- getData('GADM', country='United Kingdom', level=1)
+
+> uk_map <- fortify(uk_shp)
+
+> ggplot(uk_map, aes(x=long, y=lat, group=group)) + geom_path(lwd=0.5)
 
 
 #---------------------------------------------
