@@ -31,6 +31,14 @@ $ R
 
 > library(maptools)
 
+#---------------------------------------------
+# Drow Map
+#---------------------------------------------
+
+> library(maptools)
+
+> library(ggplot2)
+
 > ja_shp <- getData('GADM', country='JPN', level=1)
 
 > ja_map <- fortify(ja_shp)
@@ -39,7 +47,7 @@ $ R
 
 
 #---------------------------------------------
-# 
+# Height Weight
 #---------------------------------------------
 
 > install.packages("gcookbook")
@@ -86,3 +94,6 @@ $ sudo yum install freeglut-devel -y
 
 > plot3d(data$Latitude, data$Longitude, data$feet, type="s", size=1.75, lit=FALSE)
 
+#---------------------------------------------
+# 
+#---------------------------------------------
