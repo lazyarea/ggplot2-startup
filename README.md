@@ -25,6 +25,50 @@ $ R
 
 > library(RColorBrewer)
 
-> library (ggplot2)
+> library(ggplot2)
 
 > library(rgeos)
+
+> library(maptools)
+
+> ja_shp <- getData('GADM', country='JPN', level=1)
+
+> ja_map <- fortify(ja_shp)
+
+> ggplot(ja_map, aes(x=long, y=lat, group=group)) + geom_path(lwd=0.5)
+
+
+#---------------------------------------------
+# 
+#---------------------------------------------
+
+> install.packages("gcookbook")
+
+> library(gcookbook)
+
+> heightweight[, c("ageYear","heightIn")]
+
+> ggplot(heightweight, aes(x=ageYear, y=heightIn)) + geom_point()
+
+
+#---------------------------------------------
+# Geo Life Data
+#---------------------------------------------
+
+1. Latitude in decimal degrees
+
+2. Longitude in decimal degrees
+
+3. All set to 0 for this dataset
+
+4. Altitude in feet (-777 if not valid)
+
+5. Date -number of days (with fractional part) that have passed since 12/30/1899.
+
+6. Date as string.
+
+7. Time as string.
+
+> data <- read.csv("./data/Geolife\ Trajectories\ 1.3/Data/001/Trajectory/20081214235553.plt", skip=6)
+
+> 
