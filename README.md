@@ -50,9 +50,8 @@ $ R
 
 > ggplot(heightweight, aes(x=ageYear, y=heightIn)) + geom_point()
 
-
 #---------------------------------------------
-# Geo Life Data
+# Geo Life Data to 2D
 #---------------------------------------------
 
 1. Latitude in decimal degrees
@@ -71,4 +70,19 @@ $ R
 
 > data <- read.csv("./data/Geolife\ Trajectories\ 1.3/Data/001/Trajectory/20081214235553.plt", skip=6)
 
-> 
+> names(data) <- c("Latitude","Longitude","All0","feet","Date-number","Date","Time")
+
+> ggplot(data, aes(x=Latitude, y=Longitude)) + geom_point()
+
+#---------------------------------------------
+# Geo Life Data to 3D
+#---------------------------------------------
+
+$ sudo yum install freeglut-devel -y
+
+> install.packages("rgl")
+
+> library(rgl)
+
+> plot3d(data$Latitude, data$Longitude, data$feet, type="s", size=1.75, lit=FALSE)
+
