@@ -47,6 +47,8 @@ $ R
 
 > ggplot(ja_map, aes(x=long, y=lat, group=group)) + geom_path(lwd=0.5)
 
+> ggsave(filename = "ja.png", plot = last_plot())
+
 #---------------------------------------------
 # Drow Map(United Kingdom)
 #---------------------------------------------
@@ -113,5 +115,17 @@ $ sudo yum install freeglut-devel -y
 > plot3d(data$Latitude, data$Longitude, data$feet, type="s", size=1.75, lit=FALSE)
 
 #---------------------------------------------
-# 
+# install packeges jpeg
+#---------------------------------------------
+
+$ sudo yum install -y libjpeg-turbo-devel 
+
+> install.packages("jpeg")
+
+> library(jpeg)
+
+
+
+#---------------------------------------------
+# install packages png
 #---------------------------------------------
