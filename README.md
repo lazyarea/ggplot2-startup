@@ -129,3 +129,31 @@ $ sudo yum install -y libjpeg-turbo-devel
 #---------------------------------------------
 # install packages png
 #---------------------------------------------
+
+$ sudo yum install -y libpng12-devel libpng-devel
+
+> install.packages("png")
+
+> library(png)
+
+#---------------------------------------------
+# gridExtra
+#---------------------------------------------
+
+> install.package(gridExtra)
+
+> library(ggplot2)
+
+> library(gridExtra)
+
+> p1 <- ggplot(ja_map, aes(x=long, y=lat, group=group)) + geom_path(lwd=0.1)
+
+> p2 <- ggplot(data, aes(x=X,y=Y)) +  geom_point()
+
+> grid.arrange(p1, p2, ncol = 2)
+
+#---------------------------------------------
+# 表とグラフの同時描画
+#---------------------------------------------
+
+http://stackoverflow.com/questions/11603262/outputting-a-textplot-and-qplot-in-same-pdf-or-png-in-r
